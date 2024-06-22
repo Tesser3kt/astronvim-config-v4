@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -33,10 +31,14 @@ return {
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
       },
-      g = { -- vim.g.<key>
-        -- configure global vim variables (vim.g)
-        -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
-        -- This can be found in the `lua/lazy_setup.lua` file
+      g = {
+        autoformat_enabled = true, -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
+        cmp_enabled = true, -- enable completion at start
+        autopairs_enabled = true, -- enable autopairs at start
+        diagnostics_mode = 3, -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
+        icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
+        ui_notifications_enabled = true, -- disable notifications when toggling UI elements
+        vimtex_view_method = "zathura", -- set vimtex to use zathura as pdf viewer
       },
     },
     -- Mappings can be configured through AstroCore as well.
@@ -66,6 +68,16 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+      },
+      t = {
+        -- setting a mapping to false will disable it
+        -- ["<esc>"] = false,
+        ["<Esc>"] = { "<C-\\><C-n>", desc = "Exit terminal" }
+      },
+      i = {
+        -- Insert mode mappings
+        -- Correct last spelling mistake
+        ["<C-l>"] = { "<c-g>u<Esc>[s1z=`]a<c-g>u", desc = "Correct last spelling mistake" }
       },
     },
   },
