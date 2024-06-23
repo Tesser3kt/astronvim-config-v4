@@ -80,6 +80,13 @@ return {
   -- Autopairs
   {
     "windwp/nvim-autopairs",
-    disabled_filetypes = { "tex", "latex" }
+    opts = function(_, opts)
+      if not opts.disable_filetype then
+        opts.disable_filetype = {}
+      end
+      vim.list_extend(opts.disable_filetype, {
+        "tex", "latex"
+      })
+    end,
   }
 }

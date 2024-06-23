@@ -2,6 +2,9 @@ local tex_utils = {}
 tex_utils.in_mathzone = function()  -- math context detection
   return vim.fn['vimtex#syntax#in_mathzone']() == 1
 end
+tex_utils.in_tikzcd = function()  -- TikZ picture environment detection
+    return tex_utils.in_env('tikzcd')
+end
 
 function toGreek(letter)
   local romanToGreek = {
@@ -53,6 +56,6 @@ return {
     { trig = ";(%a+)", regTrig = true, wordTrig = false,
     snippetType = "autosnippet", dscr = "Greek letters." },
     f(function(_, snip) return toGreek(snip.captures[1]) end),
-    { condition = tex_utils.in_mathzone }
+    { condition = tex_utils.in_mathzone or tex_utils.in_tikzcd }
   )
 }
