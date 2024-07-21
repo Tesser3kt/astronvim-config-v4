@@ -7,11 +7,11 @@ return {
     ensure_installed = {
       "lua",
       "vim",
-      "python"
+      "python",
       -- add more arguments for adding more treesitter parsers
     },
     highlight = {
-      disable = { "tex", "latex" }
-    }
+      disable = { "tex", "latex" },
+    },
   },
 }

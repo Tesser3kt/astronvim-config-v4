@@ -3,14 +3,14 @@
 -- fit in the normal config locations above can go here
 
 -- Snippets folder
-require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/snippets"})
-require("luasnip").config.set_config({
+require("luasnip.loaders.from_lua").load { paths = "~/.config/nvim/snippets" }
+require("luasnip").config.set_config {
   -- Autotriggered snippets
   enable_autosnippets = true,
 
   -- Tab to trigger visual selection
-  store_selection_keys = "<Tab>"
-})
+  store_selection_keys = "<Tab>",
+}
 
 -- LaTeX local settings
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
@@ -24,7 +24,7 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     vim.opt_local.formatoptions = "tcq"
     vim.opt_local.colorcolumn = "81"
     -- add item on Enter in itemize/enumerate/description
-    vim.cmd([[
+    vim.cmd [[
       function! AddItem()
         let [end_lnum, end_col] = searchpairpos('\\begin{', '', '\\end{', 'nW')
         if match(getline(end_lnum), '\(itemize\|enumerate\|description\)') != -1
@@ -38,8 +38,8 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
         \ : (col(".") < col("$") ? '<CR>' : '<CR>'.AddItem() )
       nnoremap <expr><buffer> o "o".AddItem()
       nnoremap <expr><buffer> O "O".AddItem()
-    ]])
-  end
+    ]]
+  end,
 })
 
 -- Python local settings
@@ -55,7 +55,7 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     vim.opt_local.expandtab = true
     vim.opt_local.autoindent = true
     vim.opt_local.fileformat = "unix"
-  end
+  end,
 })
 
 -- HTML, JS, CSS local settings
@@ -66,5 +66,5 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     vim.opt_local.tabstop = 2
     vim.opt_local.softtabstop = 2
     vim.opt_local.spell = false
-  end
+  end,
 })
