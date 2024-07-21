@@ -386,6 +386,38 @@ return {
     { condition = tex_utils.in_mathzone }
   ),
 
+  -- Supremum / Infimum
+  s(
+    {
+      trig = "([^\\])inf",
+      priority = 100,
+      regTrig = true,
+      wordTrig = false,
+      snippetType = "autosnippet",
+      dscr = "The infimum."
+    },
+    fmta(
+      "<>\\inf",
+      f(function(_, snip) return snip.captures[1] end)
+    ),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
+    {
+      trig = "([^\\])sup",
+      priority = 100,
+      regTrig = true,
+      wordTrig = false,
+      snippetType = "autosnippet",
+      dscr = "The supremum."
+    },
+    fmta(
+      "<>\\sup",
+      f(function(_, snip) return snip.captures[1] end)
+    ),
+    { condition = tex_utils.in_mathzone }
+  ),
+
   -- Cardinality
   s(
     {

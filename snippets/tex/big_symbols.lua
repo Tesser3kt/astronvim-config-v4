@@ -570,6 +570,45 @@ return {
   ),
   s(
     {
+      trig = "rint",
+      priority = 200,
+      snippetType = "autosnippet",
+      dscr = "Riemann integral"
+    },
+    fmta("\\int_{<>}^{<>} ", {
+      i(1, "a"),
+      i(2, "b")
+    }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
+    {
+      trig = "urint",
+      priority = 500,
+      snippetType = "autosnippet",
+      dscr = "Riemann upper integral"
+    },
+    fmta("\\overline{\\int_{<>}^{<>}} ", {
+      i(1, "a"),
+      i(2, "b")
+    }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
+    {
+      trig = "lrint",
+      priority = 500,
+      snippetType = "autosnippet",
+      dscr = "Riemann lower integral"
+    },
+    fmta("\\underline{\\int_{<>}^{<>}} ", {
+      i(1, "a"),
+      i(2, "b")
+    }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
+    {
       trig = "lint",
       priority = 200,
       snippetType = "autosnippet",

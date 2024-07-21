@@ -345,6 +345,16 @@ return {
   ),
   s(
     { 
+      trig = "ovl",
+      priority = 100,
+      snippetType = "autosnippet",
+      dscr = "Overline overset"
+    },
+    fmta("\\overline{<>}<>", { i(1), i(0) }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
+    { 
       trig = "hat",
       priority = 100,
       snippetType = "autosnippet",
