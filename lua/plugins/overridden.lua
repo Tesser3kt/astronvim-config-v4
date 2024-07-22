@@ -88,5 +88,11 @@ return {
         "tex", "latex"
       })
     end,
+  },
+
+  -- Disabling better escape for collision with snippets
+  {
+   "max397574/better-escape.nvim",
+    enabled = false,
   }
 }

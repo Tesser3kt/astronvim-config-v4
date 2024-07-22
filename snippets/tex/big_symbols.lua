@@ -219,21 +219,21 @@ return {
     },
     fmta("\\sum_<><><><><><><> <>", {
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "{" end
+        if string.len(args[1][1]) > 0 then return "{" end
       end, {1}),
       i(1),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "}" end
+        if string.len(args[1][1]) > 0 then return "}" end
       end, {1}),
       f(function(args)
         if string.len(args[1][1]) > 0 then return "^" end
       end, {2}),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "{" end
+        if string.len(args[1][1]) > 0 then return "{" end
       end, {2}),
       i(2),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "}" end
+        if string.len(args[1][1]) > 0 then return "}" end
       end, {2}),
       i(0) 
     }),
@@ -277,21 +277,21 @@ return {
     },
     fmta("\\sum_<><><><><><><> <>", {
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "{" end
+        if string.len(args[1][1]) > 0 then return "{" end
       end, {1}),
       i(1),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "}" end
+        if string.len(args[1][1]) > 0 then return "}" end
       end, {1}),
       f(function(args)
         if string.len(args[1][1]) > 0 then return "^" end
       end, {2}),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "{" end
+        if string.len(args[1][1]) > 0 then return "{" end
       end, {2}),
       i(2),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "}" end
+        if string.len(args[1][1]) > 0 then return "}" end
       end, {2}),
       i(0) 
     }),
@@ -335,21 +335,21 @@ return {
     },
     fmta("\\prod_<><><><><><><> <>", {
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "{" end
+        if string.len(args[1][1]) > 0 then return "{" end
       end, {1}),
       i(1),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "}" end
+        if string.len(args[1][1]) > 0 then return "}" end
       end, {1}),
       f(function(args)
         if string.len(args[1][1]) > 0 then return "^" end
       end, {2}),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "{" end
+        if string.len(args[1][1]) > 0 then return "{" end
       end, {2}),
       i(2),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "}" end
+        if string.len(args[1][1]) > 0 then return "}" end
       end, {2}),
       i(0) 
     }),
@@ -393,21 +393,21 @@ return {
     },
     fmta("\\bigoplus_<><><><><><><> <>", {
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "{" end
+        if string.len(args[1][1]) > 0 then return "{" end
       end, {1}),
       i(1),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "}" end
+        if string.len(args[1][1]) > 0 then return "}" end
       end, {1}),
       f(function(args)
         if string.len(args[1][1]) > 0 then return "^" end
       end, {2}),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "{" end
+        if string.len(args[1][1]) > 0 then return "{" end
       end, {2}),
       i(2),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "}" end
+        if string.len(args[1][1]) > 0 then return "}" end
       end, {2}),
       i(0) 
     }),
@@ -451,21 +451,21 @@ return {
     },
     fmta("\\bigcup_<><><><><><><> <>", {
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "{" end
+        if string.len(args[1][1]) > 0 then return "{" end
       end, {1}),
       i(1),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "}" end
+        if string.len(args[1][1]) > 0 then return "}" end
       end, {1}),
       f(function(args)
         if string.len(args[1][1]) > 0 then return "^" end
       end, {2}),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "{" end
+        if string.len(args[1][1]) > 0 then return "{" end
       end, {2}),
       i(2),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "}" end
+        if string.len(args[1][1]) > 0 then return "}" end
       end, {2}),
       i(0) 
     }),
@@ -509,21 +509,21 @@ return {
     },
     fmta("\\bigcap_<><><><><><><> <>", {
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "{" end
+        if string.len(args[1][1]) > 0 then return "{" end
       end, {1}),
       i(1),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "}" end
+        if string.len(args[1][1]) > 0 then return "}" end
       end, {1}),
       f(function(args)
         if string.len(args[1][1]) > 0 then return "^" end
       end, {2}),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "{" end
+        if string.len(args[1][1]) > 0 then return "{" end
       end, {2}),
       i(2),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "}" end
+        if string.len(args[1][1]) > 0 then return "}" end
       end, {2}),
       i(0) 
     }),
@@ -616,21 +616,21 @@ return {
     },
     fmta("\\int<><><><><><><> <>", {
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "_{" end
+        if string.len(args[1][1]) > 0 then return "_{" end
       end, {1}),
       i(1, "\\Omega"),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "}" end
+        if string.len(args[1][1]) > 0 then return "}" end
       end, {1}),
       f(function(args)
         if string.len(args[1][1]) > 0 then return "^" end
       end, {2}),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "{" end
+        if string.len(args[1][1]) > 0 then return "{" end
       end, {2}),
       i(2),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "}" end
+        if string.len(args[1][1]) > 0 then return "}" end
       end, {2}),
       i(0) 
     }),
@@ -645,21 +645,21 @@ return {
     },
     fmta("\\int_<><><><><><><> <> \\, \\mathrm{d}<> <>", {
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "{" end
+        if string.len(args[1][1]) > 0 then return "{" end
       end, {1}),
       i(1),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "}" end
+        if string.len(args[1][1]) > 0 then return "}" end
       end, {1}),
       f(function(args)
         if string.len(args[1][1]) > 0 then return "^" end
       end, {2}),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "{" end
+        if string.len(args[1][1]) > 0 then return "{" end
       end, {2}),
       i(2),
       f(function(args)
-        if string.len(args[1][1]) > 1 then return "}" end
+        if string.len(args[1][1]) > 0 then return "}" end
       end, {2}),
       i(3),
       i(4, "x"),
