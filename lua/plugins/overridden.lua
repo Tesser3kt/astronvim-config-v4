@@ -46,33 +46,36 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = function(_, opts)
-      if not opts.ensure_installed then
-        opts.ensure_installed = {}
-      end
+      if not opts.ensure_installed then opts.ensure_installed = {} end
       vim.list_extend(opts.ensure_installed, {
-        "texlab", "pylsp", "html", "cssls", "tailwindcss", "eslint", "tsserver"
+        "texlab",
+        "pylsp",
+        "html",
+        "cssls",
+        "tailwindcss",
+        "eslint",
       })
     end,
   },
   {
     "jay-babu/mason-null-ls.nvim",
     opts = function(_, opts)
-      if not opts.ensure_installed then
-        opts.ensure_installed = {}
-      end
+      if not opts.ensure_installed then opts.ensure_installed = {} end
       vim.list_extend(opts.ensure_installed, {
-        "latexindent", "autopep8", "flake8", "djlint", "eslint_d"
+        "latexindent",
+        "autopep8",
+        "flake8",
+        "djlint",
+        "eslint_d",
       })
     end,
   },
   {
     "jay-babu/mason-nvim-dap.nvim",
     opts = function(_, opts)
-      if not opts.ensure_installed then
-        opts.ensure_installed = {}
-      end
+      if not opts.ensure_installed then opts.ensure_installed = {} end
       vim.list_extend(opts.ensure_installed, {
-        "python"
+        "python",
       })
     end,
   },
@@ -81,18 +84,17 @@ return {
   {
     "windwp/nvim-autopairs",
     opts = function(_, opts)
-      if not opts.disable_filetype then
-        opts.disable_filetype = {}
-      end
+      if not opts.disable_filetype then opts.disable_filetype = {} end
       vim.list_extend(opts.disable_filetype, {
-        "tex", "latex"
+        "tex",
+        "latex",
       })
     end,
   },
 
   -- Disabling better escape for collision with snippets
   {
-   "max397574/better-escape.nvim",
+    "max397574/better-escape.nvim",
     enabled = false,
-  }
+  },
 }
