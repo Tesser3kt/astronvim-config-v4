@@ -71,7 +71,7 @@ return {
       trig = "lr{",
       dscr = "left right {}"
     },
-    fmta("\\left{ <> \\right}<>", {
+    fmta("\\left\\{ <> \\right\\}<>", {
       i(1),
       i(0)
     }),
