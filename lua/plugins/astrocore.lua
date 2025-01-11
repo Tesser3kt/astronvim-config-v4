@@ -39,6 +39,7 @@ return {
         icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
         ui_notifications_enabled = true, -- disable notifications when toggling UI elements
         vimtex_view_method = "zathura", -- set vimtex to use zathura as pdf viewer
+        typst_pdf_viewer = "zathura", -- set Typst default viewer to zathura
       },
     },
     -- Mappings can be configured through AstroCore as well.
