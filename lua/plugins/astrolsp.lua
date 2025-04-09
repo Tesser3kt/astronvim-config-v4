@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -45,6 +43,30 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      pylsp = {
+        settings = {
+          pylsp = {
+            plugins = {
+              -- formatters
+              black = { enabled = true },
+              autopep8 = { enabled = false },
+              yapf = { enabled = false },
+
+              -- linters
+              pylint = { enabled = true, executable = "pylint" },
+              pycodestyle = { enabled = false },
+              pyflakes = { enabled = false },
+
+              -- type checking
+              pylsp_mypy = { enabled = true },
+              -- autocompletion
+              jedi_completion = { fuzzy = true },
+              -- import sorting
+              pylsp_isort = { enabled = true },
+            },
+          },
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {
