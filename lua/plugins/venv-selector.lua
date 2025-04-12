@@ -12,11 +12,5 @@ return {
     { ",v", "<cmd>VenvSelect<cr>" },
   },
   ---@type venv-selector.Config
-  opts = {
-    -- search = {
-    --   my_venvs = {
-    --     command = "fd python$ ~/miniforge3/",
-    --   },
-    -- },
-  },
+  opts = {},
 }
