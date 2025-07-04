@@ -26,6 +26,16 @@ return {
     { condition = tex_utils.in_mathzone }
   ),
   s(
+    { trig = "tr", snippetType = "autosnippet", dscr = "Truth symbol" },
+    t("\\top"),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
+    { trig = "fal", snippetType = "autosnippet", dscr = "False symbol" },
+    t("\\bot"),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
     {
       trig = "(%s*)qq",
       regTrig = true,
