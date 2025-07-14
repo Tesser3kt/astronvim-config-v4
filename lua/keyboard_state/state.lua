@@ -3,27 +3,24 @@ local M = {
 }
 
 function M.get_keyboard_layout()
-  local stdout = vim.fn.system({
-    "hyprctl",
-    "devices",
-    "-j",
-    "|",
-    "jq",
-    "-r",
-    "'.keyboards[] | select(.main == true) | .active_keymap'",
-  }, {})
-  print(stdout)
-
-  if stdout == "English (US)" then
-    print "us"
-    return "us"
-  elseif stdout == "Czech (QWERTY)" then
-    print "cz"
-    return "cz"
-  else
-    print "unknown"
-    return ""
+  local handle =
+    io.popen "hyprctl devices -j | jq -r '.keyboards[] | select(.main == true) | .active_keymap' | head -n1 2>/dev/null"
+  if handle then
+    local layout = handle:read "*a"
+    handle:close()
+    layout = layout:gsub("^%s*(.-)%s*$", "%1")
+    if layout:find "English" then
+      print "EN"
+      return "en"
+    elseif layout:find "Czech" or layout:find "cs" then
+      print "CZ"
+      return "cz"
+    else
+      return layout:sub(1, 2):upper()
+    end
   end
+  print "N/A"
+  return "N/A"
 end
 
 function M.set_keyboard_layout(layout_code)
