@@ -54,6 +54,7 @@ return {
         "cssls",
         "tailwindcss",
         "eslint",
+        "ts_ls",
       })
     end,
   },
@@ -67,6 +68,7 @@ return {
         "flake8",
         "djlint",
         "eslint_d",
+        "prettierd",
       })
     end,
   },
