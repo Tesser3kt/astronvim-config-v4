@@ -2,6 +2,9 @@
 -- things like custom filetypes. This just pure lua so anything that doesn't
 -- fit in the normal config locations above can go here
 
+-- Require keyboard state module
+local keyboard_module = require "keyboard_state.state"
+
 -- Snippets folder
 require("luasnip.loaders.from_lua").load { paths = "~/.config/nvim/snippets" }
 require("luasnip").config.set_config {
@@ -80,5 +83,23 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     vim.opt_local.tabstop = 2
     vim.opt_local.softtabstop = 2
     vim.opt_local.spell = false
+  end,
+})
+
+-- Change keyboard layout on exiting Insert Mode
+local insert_group = vim.api.nvim_create_augroup("MyInsertModeGroup", { clear = true })
+vim.api.nvim_create_autocmd({ "InsertLeave" }, {
+  group = insert_group,
+  callback = function()
+    keyboard_module.last_keyboard_layout = keyboard_module.get_keyboard_layout()
+    keyboard_module.set_keyboard_layout "us"
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "InsertEnter" }, {
+  group = insert_group,
+  callback = function()
+    local last_layout = keyboard_module.last_keyboard_layout
+    keyboard_module.set_keyboard_layout(last_layout)
   end,
 })
